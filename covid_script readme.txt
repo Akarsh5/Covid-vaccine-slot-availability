@@ -8,7 +8,7 @@ My code does the following things which are new:
 2. Sends an email as soon as slots are detected for your age group. Works on basis of pincode.
 3. Email consists of name of places, dates and the type of vaccine, along with the availability.
 4. Automatically opens the cowin website on your desktop browser as soon as slots are detected.
-5. Sleep is added ad there is a limit of 100 API calls in 5 mins for CoWin.
+5. Sleep is added as there is a limit of 100 API calls in 5 mins for CoWin.
 
 P.S. A short hyperlink is provided in each email for your convenience.
 
