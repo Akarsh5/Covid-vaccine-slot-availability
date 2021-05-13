@@ -119,7 +119,7 @@ def covid():
                     print("Sleeping...")
                     message_body=""
                     count=0
-                    t.sleep(54)
+                    t.sleep(55)
                     browser=0
                     covid()
 covid()               
