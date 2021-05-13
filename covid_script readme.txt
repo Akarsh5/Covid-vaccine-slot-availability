@@ -22,6 +22,6 @@ Steps to use:
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
 7. To run the code, open it in Python IDLE (after doing above steps) and press F5 to run module, you can keep it minimized now and web browser will automatically open cowin website and mail will be automatically sent to your email as soon as it senses that slots are available. If you close it, you need to restart it again for it to work.
 
-P.S. Adjust the sleep timer (t.sleep=54) accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
+P.S. Adjust the sleep timer (t.sleep=54) in code accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
 
 Feel free to modify it further. Thanks.
