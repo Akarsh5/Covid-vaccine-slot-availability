@@ -1,6 +1,6 @@
 Hi there,
 
-I created a short python script to find out when vaccine slots are available. The code present is a modified version of the code available on internet.
+I created a short python script to find out when vaccine slots are available. Part of the code I used is taken from the code available on internet. So cheers to that guy (Bhavesh I think).
 
 My code does the following things which are new:
 
@@ -22,3 +22,5 @@ Steps to use:
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
 
 P.S. Adjust the sleep timer (t.sleep=54) accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
+
+Feel free to modify it further. Thanks.
