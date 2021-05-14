@@ -12,7 +12,7 @@ from email.mime.multipart import MIMEMultipart
 
 
 pincode = "302039"
-age = 52
+age = 53
 message_body=""
 temp_user_agent = UserAgent()
 browser_header = {'User-Agent': temp_user_agent.random}
@@ -27,6 +27,7 @@ date_str = [x.strftime("%d-%m-%Y") for x in date_list]
 count = 0
 browser = 0
 s_mail=0
+found=0
 
 def send_mail():
     sender_email = "sender@gmail.com"
@@ -73,6 +74,7 @@ def covid():
                 global browser
                 global s_mail
                 global message_body
+                global found
                 URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={}&date={}".format(pincode, vaccine_date)
                 response = requests.get(URL, headers=browser_header)
                 count+=1
@@ -80,8 +82,8 @@ def covid():
                 #print(response.text)
                 if response.ok:
                     resp_json = response.json()
-                    if (response.ok) and ('centers' in json.loads(response.text)):
-                        print("Got response. Checking...")
+                    if (response.ok) and ('centers' in json.loads(response.text)) and resp_json is not None:
+                        print("Got response. Checking for "+str(format(vaccine_date))+" (Current time: "+str(datetime.datetime.now().time())+")")
                         print_flag = 'y'
                         json_data = json.loads(response.text)
                         if(print_flag=='y' or print_flag=='Y'):
@@ -92,6 +94,8 @@ def covid():
                                     #print("stuck 103")
                                     if (session["min_age_limit"] <= age) and (session["available_capacity"] > 0):
                                         #print("stuck 104")
+                                        found=1
+                                        print("Available on: "+str(format(vaccine_date))+" "+str(center['name'])+" "+str(center["block_name"])+" Price: "+str(center["fee_type"])+" Available Capacity: "+str(session["available_capacity"])+" Vaccine: "+str(session["vaccine"])+"\n")               
                                         message_body+="Available on: "+str(format(vaccine_date))+" "+str(center['name'])+" "+str(center["block_name"])+" Price: "+str(center["fee_type"])+" Available Capacity: "+str(session["available_capacity"])
                                         if(session["vaccine"] != ''):
                                             message_body+=" Vaccine: "+str(session["vaccine"])+"\n\n <br> <br>"
@@ -99,8 +103,7 @@ def covid():
                                             s_mail=1
                                             browser=1
                                             webbrowser.open('https://selfregistration.cowin.gov.in/', new=2)
-                                        
-                        
+                                     
                             
                     else:
                         print("No available slots on {}".format(vaccine_date))
@@ -109,6 +112,11 @@ def covid():
                     print("req failed")
                     t.sleep(5)
                     covid()
+
+                if found==1:
+                    found=0
+                else:
+                    print("No slots available on {}".format(vaccine_date))
 
             if s_mail==1:
                     print("Sending mail...")
@@ -119,7 +127,7 @@ def covid():
                     print("Sleeping...")
                     message_body=""
                     count=0
-                    t.sleep(55)
+                    t.sleep(57)
                     browser=0
                     covid()
 covid()               
