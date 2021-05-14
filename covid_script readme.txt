@@ -1,6 +1,6 @@
 Hi there,
 
-I created a short python script to find out when vaccine slots are available. Part of the code I used is taken from the code available on internet. So cheers to that guy (Bhavesh I think).
+I created a short python script to find out when vaccine slots are available. Part of the code I used is taken from the code available on internet. So kudos to him (Bhavesh Bhatt).
 
 My code does the following things which are new:
 
@@ -21,7 +21,8 @@ Steps to use:
 5. I used python 3.8 version for this.
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
 7. To run the code, open it in Python IDLE (after doing above steps) and press F5 to run module, you can keep it minimized now and web browser will automatically open cowin website and mail will be automatically sent to your email as soon as it senses that slots are available. If you close it, you need to restart it again for it to work.
+8. Make sure your internet connection is working in order to send a mail and laptop/pc is not off. Keep it on for the script to work.
 
-P.S. Adjust the sleep timer (t.sleep=54) in code accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
+P.S. Adjust the sleep timer (t.sleep=57) in code accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
 
 Feel free to modify it further. Thanks.
