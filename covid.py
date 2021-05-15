@@ -12,6 +12,7 @@ from email.mime.multipart import MIMEMultipart
 
 pincode =input("Enter your pincode: ")
 age = int(input("Enter your age: "))
+print("Both sender and receiver emails can be yours if you want to send the notification email to yourself.")
 sender_email = input("Enter Sender Email ID: ")
 password = input("Enter Sender Email ID Password: ")
 receiver_email = input("Enter Receiver Email ID: ")
@@ -21,7 +22,7 @@ browser_header = {'User-Agent': temp_user_agent.random}
 
 print_flag = 'N'
 
-numdays = 20
+numdays = 16
 
 base = datetime.datetime.today()
 date_list = [base + datetime.timedelta(days=x) for x in range(numdays)]
