@@ -17,7 +17,7 @@ Steps to use:
 1. Download the given script and requirements file.
 2. Make sure you have python installed. Place all the downloaded files in a folder and install all requirements using: pip install -r requirements.txt
 3. In case you still have difficulty with modules/requirements/imports, download them using pip. The command is as follows: pip install module_name
-4. You can find pip in you Python folder > Scripts.
+4. You can find pip in you Python folder > Scripts. OR open cmd and type pip
 5. I used python 3.8 version for this.
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
 7. Double click covid.py file to run the code OR open it in Python IDLE (after doing above steps) and press F5 to run module. Type the age, pincode, email addresses of sender and receiver (you can press enter to keep same if you want to send yourself), password of gmail account (password will be hidden so make sure you type it correctly). 
