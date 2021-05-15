@@ -14,9 +14,10 @@ from email.mime.multipart import MIMEMultipart
 pincode =input("Enter your pincode: ")
 age = int(input("Enter your age: "))
 print("Both sender and receiver emails can be yours if you want to send the notification email to yourself.")
+print("Please ensure sender email is by gmail.")
 sender_email = input("Enter Sender Email ID: ")
 password = getpass.getpass("Enter Sender Email ID Password (Input will be hidden, type correctly!) : ")
-print("Press Enter for Receiver email if Sender and Receiver emails are the same.")
+print("Press Enter for Receiver email if Sender and Receiver emails are the same. If not same, sender will be in cc.")
 receiver_email = input("Enter Receiver Email ID: ") or sender_email
 message_body=""
 temp_user_agent = UserAgent()
@@ -33,17 +34,22 @@ count = 0
 browser = 0
 s_mail=0
 found=0
+cc=""
 
 def send_mail():
     global sender_email
     global receiver_email
     global password
     global message_body
+    global cc
     message = MIMEMultipart("alternative")
     message["Subject"] = "Covid-19 Slot Available!"
     message["From"] = sender_email 
     message["To"] = receiver_email
-    
+    rcpt=[receiver_email]
+    if sender_email != receiver_email:
+        message["Cc"] = sender_email
+        rcpt=[receiver_email,sender_email]
     html = """\
     <html>
       <body>
@@ -69,7 +75,7 @@ def send_mail():
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(sender_email, password)
         server.sendmail(
-            sender_email, receiver_email, message.as_string()
+            sender_email, rcpt, message.as_string()
         )
 
 
