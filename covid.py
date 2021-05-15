@@ -10,9 +10,11 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-
-pincode = "302039"
-age = 53
+pincode =input("Enter your pincode: ")
+age = int(input("Enter your age: "))
+sender_email = input("Enter Sender Email ID: ")
+password = input("Enter Sender Email ID Password: ")
+receiver_email = input("Enter Receiver Email ID: ")
 message_body=""
 temp_user_agent = UserAgent()
 browser_header = {'User-Agent': temp_user_agent.random}
@@ -30,14 +32,14 @@ s_mail=0
 found=0
 
 def send_mail():
-    sender_email = "sender@gmail.com"
-    receiver_email = "receiver@gmail.com"
-    password = "your_password"
+    global sender_email
+    global receiver_email
+    global password
     global message_body
     message = MIMEMultipart("alternative")
     message["Subject"] = "Covid-19 Slot Available!"
-    message["From"] = "sender@gmail.com"
-    message["To"] = "receiver@gmail.com"
+    message["From"] = sender_email 
+    message["To"] = receiver_email
     
     html = """\
     <html>
