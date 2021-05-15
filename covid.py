@@ -17,7 +17,7 @@ print("Both sender and receiver emails can be yours if you want to send the noti
 print("Please ensure sender email is by gmail.")
 sender_email = input("Enter Sender Email ID: ")
 password = getpass.getpass("Enter Sender Email ID Password (Input will be hidden, type correctly!) : ")
-print("Press Enter for Receiver email if Sender and Receiver emails are the same. If not same, sender will be in cc.")
+print("Press Enter if Sender and Receiver emails are the same else type Reveiver email. If not same, sender will be in cc.")
 receiver_email = input("Enter Receiver Email ID: ") or sender_email
 message_body=""
 temp_user_agent = UserAgent()
