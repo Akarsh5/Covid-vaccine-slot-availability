@@ -14,14 +14,15 @@ P.S. A short hyperlink is provided in each email for your convenience.
 
 Steps to use:
 
-1. Download the given script and modify the age, pincode, email addresses of sender and receiver (you can keep same if you want to send yourself), password of gmail account.
-2. Make sure you have python installed along with all the necessary modules which are at the top (Starts with import).
-3. In case you dont have modules, download them using pip. The command is as follows: pip install module_name
-4. You can find pip in you python folder> Scripts.
+1. Download the given script and requirements file.
+2. Make sure you have python installed. Place all the downloaded files in a folder and install all requirements using: pip install -r requirements.txt
+3. In case you still have difficulty with modules/requirements/imports, download them using pip. The command is as follows: pip install module_name
+4. You can find pip in you Python folder > Scripts.
 5. I used python 3.8 version for this.
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
-7. To run the code, open it in Python IDLE (after doing above steps) and press F5 to run module, you can keep it minimized now and web browser will automatically open cowin website and mail will be automatically sent to your email as soon as it senses that slots are available. If you close it, you need to restart it again for it to work.
-8. Make sure your internet connection is working in order to send a mail and laptop/pc is not off. Keep it on for the script to work.
+7. To run the code, open it in Python IDLE (after doing above steps) and press F5 to run module. Type the age, pincode, email addresses of sender and receiver (you can keep same if you want to send yourself), password of gmail account. 
+8. You can keep it minimized now and web browser will automatically open cowin website and mail will be automatically sent to your email as soon as it senses that slots are available. If you close it, you need to restart it again for it to work.
+9. Make sure your internet connection is working in order to send a mail and laptop/pc is not off. Keep it on for the script to work.
 
 P.S. Adjust the sleep timer (t.sleep=57) in code accordingly if you're unable to send requests (i.e. if you're facing request failed, increase the timer to 60 or 70)
 
