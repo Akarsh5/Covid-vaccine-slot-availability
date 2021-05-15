@@ -15,7 +15,7 @@ pincode =input("Enter your pincode: ")
 age = int(input("Enter your age: "))
 print("Both sender and receiver emails can be yours if you want to send the notification email to yourself.")
 sender_email = input("Enter Sender Email ID: ")
-password = getpass.getpass("Enter Sender Email ID Password (It will be hidden) : ")
+password = getpass.getpass("Enter Sender Email ID Password (Input will be hidden, type correctly!) : ")
 print("Press Enter for Receiver email if Sender and Receiver emails are the same.")
 receiver_email = input("Enter Receiver Email ID: ") or sender_email
 message_body=""
