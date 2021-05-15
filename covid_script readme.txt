@@ -20,7 +20,7 @@ Steps to use:
 4. You can find pip in you Python folder > Scripts.
 5. I used python 3.8 version for this.
 6. If you're unable to receive emails, go to gmail account > manage your account option > Security > Allow less secured apps, turn it on. (It might be off by default).
-7. To run the code, open it in Python IDLE (after doing above steps) and press F5 to run module. Type the age, pincode, email addresses of sender and receiver (you can keep same if you want to send yourself), password of gmail account. 
+7. Double click covid.py file to run the code OR open it in Python IDLE (after doing above steps) and press F5 to run module. Type the age, pincode, email addresses of sender and receiver (you can press enter to keep same if you want to send yourself), password of gmail account (password will be hidden so make sure you type it correctly). 
 8. You can keep it minimized now and web browser will automatically open cowin website and mail will be automatically sent to your email as soon as it senses that slots are available. If you close it, you need to restart it again for it to work.
 9. Make sure your internet connection is working in order to send a mail and laptop/pc is not off. Keep it on for the script to work.
 
