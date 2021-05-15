@@ -4,6 +4,7 @@ from datetime import datetime, time
 import datetime
 import json
 import requests
+import getpass
 from fake_useragent import UserAgent
 import webbrowser
 import smtplib, ssl
@@ -14,8 +15,9 @@ pincode =input("Enter your pincode: ")
 age = int(input("Enter your age: "))
 print("Both sender and receiver emails can be yours if you want to send the notification email to yourself.")
 sender_email = input("Enter Sender Email ID: ")
-password = input("Enter Sender Email ID Password: ")
-receiver_email = input("Enter Receiver Email ID: ")
+password = getpass.getpass("Enter Sender Email ID Password (It will be hidden) : ")
+print("Press Enter for Receiver email if Sender and Receiver emails are the same.")
+receiver_email = input("Enter Receiver Email ID: ") or sender_email
 message_body=""
 temp_user_agent = UserAgent()
 browser_header = {'User-Agent': temp_user_agent.random}
@@ -126,11 +128,12 @@ def covid():
                     send_mail()
                     s_mail=0
 
-            if count==20:
+            if count==16:
                     print("Sleeping...")
                     message_body=""
                     count=0
                     t.sleep(57)
                     browser=0
                     covid()
-covid()               
+
+covid()
